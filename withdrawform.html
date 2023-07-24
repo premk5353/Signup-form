@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arialblack;
+        }
+
+        input[type=text],
+        input[type=number] {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 10px 2px 5px;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=Number]:focus,
+        input[type=Number]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        .Withdrawbtn {
+
+            background: blue;
+            color: white;
+            padding: 10px;
+            border-radius: 15px;
+            display: block;
+
+        }
+
+        .centered-image {
+            display: center;
+            margin: 0 auto;
+        }
+
+        .required-label::after {
+            content: "*";
+            color: red;
+            display: inline-block;
+            margin-left: 5px;
+        }
+    </style>
+    <title>Withdrawal Form</title>
+</head>
+
+<body>
+    <img src="https://www.shutterstock.com/shutterstock/photos/1844172043/display_1500/stock-vector-cash-withdrawal-icon-or-logo-isolated-sign-symbol-vector-illustration-high-quality-black-style-1844172043.jpg"
+        class="centered-image" width="200" height="100" alt="Logo">
+    <h1>Withdraw Form</h1>
+
+    <input type="text" placeholder="IFSC code" required>
+
+    <input type="number" placeholder="Account Number" required>
+
+    <input type="text" placeholder="Bank Name" required>
+
+    <input type="text" placeholder="Branch Name" required>
+
+    <input type="number" placeholder="Amount" required>
+
+    <button type="submit" class="Withdrawbtn">Withdraw</button>
+
+</body>
+
+</html>
