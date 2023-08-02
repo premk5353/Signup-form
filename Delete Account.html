@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        /* Add your custom CSS styles here to style the CAPTCHA form */
+.center {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.g-recaptcha {
+    /* Style your CAPTCHA container here */
+    margin-bottom: 10px;
+}
+
+#deleteButton {
+    /* Style your delete button here */
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+    </style>
+
+<head>
+    <title>Delete Account with "I am not a robot" CAPTCHA</title>
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Add the Google reCAPTCHA API script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <div class="center">
+        <h1>Delete Account with CAPTCHA</h1>
+        <p>Please confirm that you are not a robot:</p>
+        <!-- Add the "I am not a robot" CAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+        <button id="deleteButton" onclick="deleteAccount()">Delete Account</button>
+    </div>
+
+    <script>
+        // Your JavaScript function for deleting the account can be added here
+        function deleteAccount() {
+            // Verify the CAPTCHA
+            grecaptcha.ready(function () {
+                grecaptcha.execute('YOUR_SITE_KEY', { action: 'delete_account' })
+                    .then(function (token) {
+                        // Perform CAPTCHA validation on the server-side
+                        // You can send the token to your server for validation
+                        // If the validation is successful, show the alert and proceed with account deletion
+                        // If the validation fails, show an error message
+                        // Note: Server-side CAPTCHA validation is essential for security
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>
